@@ -30,6 +30,6 @@ if($row == 1) {
 	exit();
 } else {
 	$_SESSION['nao_autenticado'] = true;
-	header('Location: admLogin.html');
+	header('Location: ../admLogin.html');
 	exit();
 }
