@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao.php'); //inclui o PHP com os dasdos da conexão
+include('../conexao.php'); //inclui o PHP com os dasdos da conexão
 
 //Verifica se os campos estão vazio
 if(empty($_POST['login']) || empty($_POST['senha'])) { 
@@ -14,7 +14,8 @@ $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
 //busca no banco de dados se confere com os dados do formulario, no caso CPF da table com $usuario
 //inserido e senha da table é $senha inserida
-$query = "select id_user, nome, cpf from usuario where cpf = '{$usuario}' and senha ='{$senha}'";
+//$query = "select id_user, nome, cpf from usuario where cpf = '{$usuario}' and senha ='{$senha}'";
+$query = "select id_adm, login, nome from adminstrador where login = '{$usuario}' and senha ='{$senha}'";
 
 //executa a query
 $result = mysqli_query($conexao, $query);
