@@ -1,7 +1,7 @@
 <?php
 include('autenticacao.php');
 include('conexao.php');
-$resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa from usuario inner join empresa on usuario.empresa_id = empresa.id_com order by id_user");
+$resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa from usuario inner join empresa on usuario.empresa_id = empresa.id_emp order by id_user");
 ?>
 <h2>Olá, <?php echo $_SESSION['usuario'];?></h2>
 <h2><a href="sair.php">Sair</a></h2>
