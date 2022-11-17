@@ -4,7 +4,7 @@ include('../conexao.php'); //inclui o PHP com os dasdos da conexão
 
 //Verifica se os campos estão vazio
 if(empty($_POST['login']) || empty($_POST['senha'])) { 
-	header('Location: admLogin.html');
+	header('Location: admLogin.php');
 	exit();
 }
 
@@ -30,6 +30,6 @@ if($row == 1) {
 	exit();
 } else {
 	$_SESSION['nao_autenticado'] = true;
-	header('Location: ../admLogin.html');
+	header('Location: ../admLogin.php');
 	exit();
 }

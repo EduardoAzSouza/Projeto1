@@ -1,5 +1,5 @@
 <?php
 session_start();
 unset($_SESSION['usuario']);
-header('Location: index.html');
+header('Location: index.php');
 exit();

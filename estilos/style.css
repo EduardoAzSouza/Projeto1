@@ -8,7 +8,8 @@
 }
 
 body, html{
-    background-image: url(../imagens/pexels-phearak.jpg);
+    background-color: white;
+    background-image: url(../imagens/pexels-phearak.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
@@ -62,6 +63,7 @@ div#formulario > h1 {
 div#formulario > p {
     font-size: 0.8em;
 }
+
 form > div.campo {
     background-color: #000000;
     border: 2px solid #000000;
@@ -78,7 +80,6 @@ div.campo > label {
 
 div.campo > i {
     color: white;
-    /*background-color: black;*/
     font-size: 1.9em;
     width: 40px;
     padding: 5px;

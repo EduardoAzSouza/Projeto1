@@ -1,5 +1,5 @@
 <?php
 session_start();
 unset($_SESSION['usuario']);
-header('Location: ../admLogin.html');
+header('Location: ../admLogin.php');
 exit();

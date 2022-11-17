@@ -11,18 +11,22 @@ $resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa f
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Painel do Usuario</title>
 	<link rel="stylesheet" href="estilos/main.css">
-	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	<header>
-		<h2 class="titulo">Olá, <?php echo $_SESSION['usuario'];?></h2>
-		<h2><a href="sair.php">Sair</a></h2>
+		<div class="cabeca">
+			<h2 class="titulo">Olá, <?php echo $_SESSION['usuario'];?></h2>
+		</div>
+		<h2><a class="sair" href="sair.php">Sair</a></h2>
 	</header>
-	<div id="Busca">
-  		<input type="text" id="cxBusca" placeholder="Buscar..."/>
-  		<img src="search3.png" id="btnBusca" alt="Buscar"/>
+	<div class="visao">
+		<h2><a class="view" href="#">Usuarios</a></h2>
+		<h2><a class="view" href="painele.php">Empresas</a></h2>
 	</div>
 	<main>
+		<div>
+		</div>
 		<?php if(mysqli_num_rows($resultado) < 1){ exit; } ?>
 		<table class="tabela">
 			<thead>
