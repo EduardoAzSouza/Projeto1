@@ -21,8 +21,8 @@ $resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa f
 	<div class="visao">
 		<h2><a class="view" href="#">Usuarios</a></h2>
 		<h2><a class="view" href="admpainele.php">Empresas</a></h2>
-		<h2><a class="view" href="#">Novo Usuario</a></h2>
-		<h2><a class="view" href="#">Nova Empresa</a></h2>
+		<h2><a class="view" href="new_User.php">Novo Usuario</a></h2>
+		<h2><a class="view" href="new_com.php">Nova Empresa</a></h2>
 	</div>
 	<main>
 		<div>
@@ -62,7 +62,7 @@ $resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa f
 				<td>$telefone</td>
 				<td>$carro</td>
 				<td>$empresa</td>
-				<td><a href=\"editar.php?id=$id\">[Editar]</a>
+				<td><a href=\"edit_User.php?id=$id\">[Editar]</a>
 				| <a href=\"excluir.php?id=$id\">[Excluir]</a></td>
 			<tr>\n";
 		}

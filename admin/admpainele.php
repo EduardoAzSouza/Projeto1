@@ -21,8 +21,8 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 	<div class="visao">
 		<h2><a class="view" href="admpainel.php">Usuarios</a></h2>
 		<h2><a class="view" href="#">Empresas</a></h2>
-		<h2><a class="view" href="#">Novo Usuario</a></h2>
-		<h2><a class="view" href="#">Nova Empresa</a></h2>
+		<h2><a class="view" href="new_User.php">Novo Usuario</a></h2>
+		<h2><a class="view" href="new_com.php">Nova Empresa</a></h2>
 	</div>
 	<main>
 		<div>
@@ -59,7 +59,7 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 				<td>$endereco</td>
 				<td>$telefone</td>
 				<td>$responsavel</td>
-				<td><a href=\"editar.php?id=$id\">[Editar]</a>
+				<td><a href=\"edit_com.php?id=$id\">[Editar]</a>
 				| <a href=\"excluirEmp.php?id=$id\">[Excluir]</a></td>
 			<tr>\n";
 		}
