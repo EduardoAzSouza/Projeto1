@@ -59,8 +59,8 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 				<td>$endereco</td>
 				<td>$telefone</td>
 				<td>$responsavel</td>
-				<td><a href=\"edit_com.php?id=$id\">[Editar]</a>
-				| <a href=\"excluirEmp.php?id=$id\">[Excluir]</a></td>
+				<td class='tb'><a class='edit' href=\"edit_User.php?id=$id\">Editar</a>
+				<a class='delete' href=\"excluir.php?id=$id\">Excluir</a></td>
 			<tr>\n";
 		}
 		?>

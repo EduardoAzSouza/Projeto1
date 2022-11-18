@@ -112,6 +112,34 @@ main{
     text-align: left;
 }
 
+.tb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.edit{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    background-color: #00ff2a;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.delete{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    background-color: #e00000;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
 footer{
     width:100;
     text-align: center;
@@ -133,6 +161,7 @@ footer{
     }
 
     .visao{
+        display: flex;
         background-color: #ff0000da;
         border-radius: 0px;
         padding: 0;

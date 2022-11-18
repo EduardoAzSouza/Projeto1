@@ -166,10 +166,9 @@ footer{
         box-shadow: none;
     }
     .tabela{
+        margin: 0%;
         border-spacing: 5px;
-    }
-    .tabela td{
-        margin:5px 0;
+        
     }
 
 }

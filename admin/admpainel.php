@@ -62,8 +62,8 @@ $resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa f
 				<td>$telefone</td>
 				<td>$carro</td>
 				<td>$empresa</td>
-				<td><a href=\"edit_User.php?id=$id\">[Editar]</a>
-				| <a href=\"excluir.php?id=$id\">[Excluir]</a></td>
+				<td class='tb'><a class='edit' href=\"edit_User.php?id=$id\">Editar</a>
+				<a class='delete' href=\"excluir.php?id=$id\">Excluir</a></td>
 			<tr>\n";
 		}
 		?>
