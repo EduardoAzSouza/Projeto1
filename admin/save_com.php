@@ -12,6 +12,6 @@
 	mysqli_query($conexao,"INSERT INTO empresa (nome, nome_fant, cnpj, endereco, telefone, responsavel) VALUES('$nome', '$Nome_Fant', '$CNPJ', '$endereco', '$telefone', '$responsavel')");
 
 	mysqli_close($conexao);
-	echo "Salvo com Sucesso <br/>";
+	
+    header("Location: admpainele.php");
 ?>
-<br><a href="admpainel.php">Voltar...</a></br>

@@ -14,6 +14,6 @@
 	mysqli_query($conexao,"INSERT INTO usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha) VALUES ('$nome', '$CPF', '$CNH', '$endereco', '$telefone', '$carro', '$empresa', '$senha')");
 
 	mysqli_close($conexao);
-	echo "Salvo com Sucesso <br/>";
+
+	header("Location: admpainel.php");
 ?>
-<br><a href="admpainel.php">Voltar...</a></br>
