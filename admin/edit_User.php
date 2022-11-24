@@ -75,6 +75,9 @@
 	<footer>
 		©CRUD by Eduardo Souza.
 	</footer>
+	<footer>
+		©CRUD by Eduardo Souza.
+	</footer>
 </body>
 </html>
 	

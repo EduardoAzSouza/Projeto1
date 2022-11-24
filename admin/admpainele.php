@@ -1,7 +1,8 @@
 <?php
 include('admautenticacao.php');
 include('../conexao.php');
-$resultemp = mysqli_query($conexao, "select * from empresa order by nome");
+$pesquisa = $_POST['busca'] ?? '';
+$resultemp = mysqli_query($conexao, "select * from empresa Where nome LIKE '%$pesquisa%' order by id_emp");
 ?>
 <!DOCTYPE html>
 <head>
@@ -10,6 +11,7 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Painel do Administrador</title>
 	<link rel="stylesheet" href="../estilos/main.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -19,10 +21,12 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 		<h2><a class="sair" href="admlogout.php">Sair</a></h2>
 	</header>
 	<div class="visao">
-		<h2><a class="view" href="admpainel.php">Usuarios</a></h2>
-		<h2><a class="view" href="#">Empresas</a></h2>
-		<h2><a class="view" href="new_User.php">Novo Usuario</a></h2>
+		<h2><a class="view" href="admpainel.php">Ver Usuarios</a></h2>
 		<h2><a class="view" href="new_com.php">Nova Empresa</a></h2>
+		<form class="serc_bar" action="admpainele.php" method="POST">
+              <input class="pesquisa" type="search" placeholder="Nome" aria-label="Search" autocomplete="off" name="busca" autofocus>
+              <button class="buscar" type="submit"><i class="material-icons">search</i></button>
+        </form>
 	</div>
 	<main>
 		<div>

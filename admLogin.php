@@ -33,7 +33,7 @@
                         Esqueceu a senha?
                     </a>
                     <a href="index.php" class="admL">
-                        Voltar
+                        Entrar com Usuario
                     </a> 
                 </form>
                 <br/>

@@ -1,7 +1,8 @@
 <?php
 include('autenticacao.php');
 include('conexao.php');
-$resultemp = mysqli_query($conexao, "select * from empresa order by nome");
+$pesquisa = $_POST['busca'] ?? '';
+$resultemp = mysqli_query($conexao, "select * from empresa Where nome LIKE '%$pesquisa%' order by nome");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Painel do Usuario</title>
 	<link rel="stylesheet" href="estilos/main.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -20,9 +21,12 @@ $resultemp = mysqli_query($conexao, "select * from empresa order by nome");
 		</div>
 		<h2><a class="sair" href="sair.php">Sair</a></h2>
 	</header>
-	<div class="visao">
-		<h2><a class="view" href="painel.php">Usuarios</a></h2>
-		<h2><a class="view" href="#">Empresas</a></h2>
+	<div class="visaoU">
+		<h2><a class="view" href="painel.php">Ver Usuarios</a></h2>
+		<form class="serc_bar" action="painele.php" method="POST">
+              <input class="pesquisa" type="search" placeholder="Nome" aria-label="Search" autocomplete="off" name="busca" autofocus>
+              <button class="buscar" type="submit"><i class="material-icons">search</i></button>
+        </form>
 	</div>
 	<main>
 		<div>

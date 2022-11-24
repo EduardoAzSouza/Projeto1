@@ -53,13 +53,16 @@
 				</td>
 				</tr>
 				<tr>
-					<td><a class="botao" href="admpainel.php">Voltar</a></td>
+					<td><a class="botao" href="admpainele.php">Voltar</a></td>
 					<td><input type="submit" value="Salvar"
 					style="cursor:pointer"/></td>
 				</tr>
 			</table>
 </form>
 	</main>
+	<footer>
+		©CRUD by Eduardo Souza.
+	</footer>
 </body>
 </html>
 	

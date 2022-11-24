@@ -65,6 +65,14 @@ header{
     margin-top: 2vh;
 }
 
+.visaoU{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 2vh;
+}
+
 .view{
     display: block;
     text-align: center;
@@ -75,6 +83,56 @@ header{
     border-radius: 10px;
     text-decoration: none;
     border: 1px solid black;
+}
+
+.view:hover{
+    background-color: #9c0000; 
+}
+
+.serc_bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background-color:#000000;
+    border-radius: 10px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    
+}
+
+.pesquisa {
+    display: block;
+    background-color: #e7e7e7;
+    text-align: left;
+    padding: 10px;
+    font-size: 1em;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.buscar{
+    box-sizing: border-box;
+    background: transparent;
+    border: 0px;
+}
+
+.material-icons{
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    background-color: #ff0000;
+    color: white;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.material-icons:hover{
+    background-color: #9c0000;
 }
 
 
@@ -101,9 +159,9 @@ main{
 
 .tabela th{
     height: 50px;
-    background-color: red;
+    background-color: #ff0000;
     padding: 5px;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .tabela td{
@@ -122,23 +180,29 @@ main{
 
 .edit{
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: white;
     background-color: #00ff2a;
     padding: 5px;
     border-radius: 10px;
-    
+}
+
+.edit:hover{
+    background-color: #00d123;
 }
 
 .delete{
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.em;
     color: white;
-    background-color: #e00000;
+    background-color: #ff0000;
     padding: 5px;
     border-radius: 10px;
 }
 
+.delete:hover{
+    background-color: #9c0000;
+}
 
 footer{
     width:100;
@@ -169,6 +233,15 @@ footer{
         gap:0px;
     }
 
+    .visaoU{
+        display: flex;
+        background-color: #ff0000da;
+        border-radius: 0px;
+        padding: 0;
+        margin: 0px;
+        gap:40px;
+    }
+
     .view{
         font-size: 0.8em;
         background-color: #ff0000da;
@@ -176,9 +249,31 @@ footer{
         border-radius: 0px;
         border: 0px;
         border: 1px solid black;
-    
+        max-width: 114px;
     }
 
+    .serc_bar{
+        gap: 2px;
+        border: 1px solid black;
+        padding-right: 10px;
+        background-color: transparent;
+        border-radius: 0px;
+    }
+    .pesquisa{
+        box-sizing: border-box;
+        width: 150px;
+        border-radius: 0px;
+        height: 56px;
+    }
+
+    .buscar{
+        height: 56px;
+    }
+    .material-icons{
+        display: flex;
+        border: none;
+        margin-left: 5px ;
+    }
     main{
         opacity: 1;
         border-radius: 0px;
@@ -200,11 +295,21 @@ footer{
     .tabela td:not(:first-child){
         display:flex;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 25px;
     }
 
     .tabela td{
         margin:5px 0;
+        font-size: 1.2em;
     }
+
+    .edit{
+        font-size: 1.5em;
+    }
+
+    .delete{
+        font-size: 1.5em;
+    }
+
 
 }

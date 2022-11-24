@@ -71,6 +71,9 @@
 			</table>
 </form>
 	</main>
+	<footer>
+		©CRUD by Eduardo Souza.
+	</footer>
 </body>
 </html>
 	
