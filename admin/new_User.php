@@ -1,6 +1,8 @@
 <?php
 	include('admautenticacao.php');
 	include('../conexao.php');
+
+	$result = mysqli_query($conexao, "select distinct id_emp, empresa.nome from empresa order by nome");
 ?>
 <!DOCTYPE html>
 <head>
@@ -25,42 +27,50 @@
 				</tr>
 				<tr>
 					<td>Nome</td>
-					<td><input name="Nome" type="text" id="nome" autocomplete="off"/>
-				</td>
+					<td><input name="Nome" type="text" id="nome" autocomplete="off" required minlength="8" maxlength="40"/>
+					</td>
 				</tr>
 				<tr>
 					<td>CPF</td>
-					<td><input name="CPF" type="text" id="cpf" autocomplete="off"/>
-				</td>
+					<td><input name="CPF" type="text" id="cpf" autocomplete="off" required minlength="14" maxlength="14"/>
+					<script src="./cpf.js"></script>
+					</td>
 				</tr>
 				<tr>
 					<td>CNH</td>
-					<td><input name="CNH" type="text" id="cnh" autocomplete="off" />
-				</td>
+					<td><input name="CNH" type="text" id="cnh" autocomplete="off" maxlength="14"/>
+					</td>
 				</tr>
 				<tr>
 					<td>Endereço</td>
-					<td><input name="Endereco" type="text" id="endereco" autocomplete="off"/>
-				</td>
+					<td><input name="Endereco" type="text" id="endereco" autocomplete="off" required minlength="10" maxlength="100"/>
+					</td>
 				</tr>
 				<tr>
 					<td>Telefone</td>
-					<td><input name="Telefone" type="text" id="telefone" autocomplete="off"/>
+					<td><input name="Telefone" type="text" id="telefone" autocomplete="off" required minlength="9" maxlength="16"/>
 				</td>
 				</tr>
 				<tr>
 					<td>Carro</td>
-					<td><input name="Carro" type="text" id="carro" autocomplete="off"/>
-				</td>
+					<td><input name="Carro" type="text" id="carro" autocomplete="off" maxlength="30"/>
+					</td>
 				</tr>
 				<tr>
 					<td>ID Empresa</td>
-					<td><input name="Empresa" type="text" id="empresa" autocomplete="off"/>
-				</td>
+					<td><select name="Empresa" id="empresa" required>
+					<?php 
+						echo "<option value = '' >Selecione uma Empresa</option>";
+						while($linha = mysqli_fetch_array($result)){
+								echo "<option value='{$linha['id_emp']}'>{$linha['nome']}</option>";
+							}
+						?>
+					</select>
+					</td>
 				</tr>
 				<tr>
 					<td>Senha</td>
-					<td><input name="Senha" type="text" id="senha" autocomplete="off"/></td>
+					<td><input name="Senha" type="password" id="senha" autocomplete="off" required minlength="8" maxlength="20"/></td>
 				</tr>
 				<tr>
 				<tr>

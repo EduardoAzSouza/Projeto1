@@ -1,17 +1,20 @@
 <?php
-	$nome = $_POST["Nome"];
-    $CPF = $_POST["CPF"];
-    $CNH = $_POST["CNH"];
-    $endereco = $_POST["Endereco"];
-    $telefone = $_POST["Telefone"];
-    $carro = $_POST["Carro"];
-    $empresa = $_POST["Empresa"];
-    $senha = $_POST["Senha"];
-	
-	include('admautenticacao.php');
-	include('../conexao.php');
 
-	mysqli_query($conexao,"INSERT INTO usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha) VALUES ('$nome', '$CPF', '$CNH', '$endereco', '$telefone', '$carro', '$empresa', '$senha')");
+    include('admautenticacao.php');
+    include('../conexao.php');
+
+	$nome = mysqli_real_escape_string($conexao, $_POST["Nome"]);
+    $CPF = mysqli_real_escape_string($conexao,$_POST["CPF"]);
+    $CNH = mysqli_real_escape_string($conexao,$_POST["CNH"]);
+    $endereco = mysqli_real_escape_string($conexao,$_POST["Endereco"]);
+    $telefone = mysqli_real_escape_string($conexao,$_POST["Telefone"]);
+    $carro = mysqli_real_escape_string($conexao,$_POST["Carro"]);
+    $empresa = mysqli_real_escape_string($conexao,$_POST["Empresa"]);
+    $senha = mysqli_real_escape_string($conexao,$_POST["Senha"]);
+
+    $senha = md5($senha);
+
+	$test = mysqli_query($conexao,"INSERT INTO usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha) VALUES ('$nome', '$CPF', '$CNH', '$endereco', '$telefone', '$carro', '$empresa', '$senha')");
 
 	mysqli_close($conexao);
 

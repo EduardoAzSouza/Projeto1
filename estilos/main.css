@@ -94,7 +94,7 @@ header{
     align-items: center;
     justify-content: center;
     gap: 2px;
-    background-color:#000000;
+    background-color: white;
     border-radius: 10px;
     border-right: 1px solid black;
     border-left: 1px solid black;
@@ -193,7 +193,7 @@ main{
 
 .delete{
     text-decoration: none;
-    font-size: 1.em;
+    font-size: 1.5em;
     color: white;
     background-color: #ff0000;
     padding: 5px;

@@ -15,7 +15,7 @@ $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 //busca no banco de dados se confere com os dados do formulario, no caso CPF da table com $usuario
 //inserido e senha da table é $senha inserida
 
-$query = "select *from administrador where login = '{$usuario}' and senha ='{$senha}'";
+$query = "select *from administrador where login = '{$usuario}' and senha = md5('{$senha}')";
 
 //executa a query
 $result = mysqli_query($conexao, $query);

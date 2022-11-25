@@ -6,7 +6,7 @@ create table administrador (
 id_adm int not null auto_increment primary key,
 nome varchar(40) not null,
 login varchar(20) not null unique key,
-senha varchar(20) not null
+senha varchar(32) not null
 )default charset = utf8;
 
 create table empresa(
@@ -28,7 +28,7 @@ endereco varchar(100) not null,
 telefone varchar(16) not null,
 carro varchar(30),
 empresa_id int not null,
-senha varchar(20) not null,
+senha varchar(32) not null,
 foreign key (empresa_id) references empresa(id_emp)
 )default charset = utf8;
 
@@ -38,7 +38,9 @@ drop table adminstrador;
 
 
 insert into administrador(nome, login, senha) values
-("Administrador", "admin", "admin123");
+("Administrador", "admin", md5('admin123')),
+("Administrator", "testeadmin", md5('987654321teste')),
+("Administrator", "teste", md5('123'));
 
 insert into empresa (nome, nome_fant, cnpj, endereco, telefone, responsavel) values
 ("Overdrive", "Overdrive Softwares e Consultoria", "73.739.457/0001-96", "Algum lugar de Araras", "(19)98571-2127","Rafael"),
@@ -87,3 +89,10 @@ insert into usuario(nome, cpf, endereco, telefone, empresa_id, senha) values
 ("Dayana de Oliveira", "493.213.184-45", "Quadra 587", "(45)2108-2471", 1, "12345678"),
 ("Breno Lima Nascimento", "367.939.533-70", "Quadra 675", "(32)2830-4261", 1, "12345678");
 
+select distinct id_emp from empresa order by id_emp;
+select distinct id_emp, empresa.nome from empresa order by id_emp;
+
+select * from usuario where cpf = "248.821.351-91" and senha = md5('12345678');
+
+insert into usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha) values
+("Laura Leite", "248.821.351-91", "68048192746", "Algun lugar proximo ao Senai", "(11)97514-8586", "Ford KA", 1, md5('12345678'));
