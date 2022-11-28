@@ -53,8 +53,6 @@ insert into usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha
 
 select nome, empresa_id from usuario;
 
-select * from usuario;
-
 select usuario.nome, usuario.empresa_id from usuario join empresa
 on empresa.id_com = empresa.nome;
 
@@ -96,3 +94,7 @@ select * from usuario where cpf = "248.821.351-91" and senha = md5('12345678');
 
 insert into usuario(nome, cpf, cnh, endereco, telefone, carro, empresa_id, senha) values
 ("Laura Leite", "248.821.351-91", "68048192746", "Algun lugar proximo ao Senai", "(11)97514-8586", "Ford KA", 1, md5('12345678'));
+
+update usuario
+set senha = md5('12345678')
+where senha = "12345678";
