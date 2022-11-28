@@ -1,7 +1,7 @@
 <?php
 include('autenticacao.php');
 include('conexao.php');
-$pesquisa = $_POST['busca'] ?? '';
+$pesquisa = mysqli_real_escape_string($conexao, $_POST['busca'] ?? '');
 $resultemp = mysqli_query($conexao, "select * from empresa Where nome LIKE '%$pesquisa%' order by nome");
 ?>
 

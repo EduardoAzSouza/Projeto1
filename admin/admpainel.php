@@ -1,7 +1,7 @@
 <?php
 include('admautenticacao.php');
 include('../conexao.php');
-$pesquisa = $_POST['busca'] ?? '';
+$pesquisa = mysqli_real_escape_string($conexao, $_POST['busca'] ?? '');
 $resultado = mysqli_query($conexao, "select usuario.*, empresa.nome as empresa from usuario inner join empresa on usuario.empresa_id = empresa.id_emp Where usuario.nome LIKE '%$pesquisa%' order by id_user");
 ?>
 <!DOCTYPE html>

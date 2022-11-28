@@ -1,7 +1,7 @@
 <?php
 include('admautenticacao.php');
 include('../conexao.php');
-$pesquisa = $_POST['busca'] ?? '';
+$pesquisa = mysqli_real_escape_string($conexao, $_POST['busca'] ?? '');
 $resultemp = mysqli_query($conexao, "select * from empresa Where nome LIKE '%$pesquisa%' order by id_emp");
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ $resultemp = mysqli_query($conexao, "select * from empresa Where nome LIKE '%$pe
 				<td>$telefone</td>
 				<td>$responsavel</td>
 				<td class='tb'><a class='edit' href=\"edit_com.php?id=$id\">Editar</a>
-				<a class='delete' href=\"excluir.php?id=$id\">Excluir</a></td>
+				<a class='delete' href=\"excluirEmp.php?id=$id\">Excluir</a></td>
 			<tr>\n";
 		}
 		?>
